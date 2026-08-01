@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HirePotential — AI interview prep</title>
 <meta name="description" content="See what a job description is really screening for, sharpen your CV and LinkedIn profile, and rehearse out loud with real feedback — all on your device.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%235E5CE6%22/><circle cx=%2250%22 cy=%2250%22 r=%2222%22 fill=%22none%22 stroke=%22white%22 stroke-width=%228%22/><circle cx=%2250%22 cy=%2250%22 r=%228%22 fill=%22white%22/></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#37414F">
 <style>
   :root {
     --indigo: #5856D6;
@@ -114,10 +118,11 @@
   .brand .mark {
     width: 28px; height: 28px;
     border-radius: 8px;
-    background: var(--indigo);
     display: grid; place-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
   }
-  .brand .mark svg { width: 16px; height: 16px; }
+  .brand .mark img { width: 100%; height: 100%; display: block; }
   nav.top .links { display: flex; gap: 28px; align-items: center; }
   nav.top .links a {
     font-size: 14px;
@@ -419,7 +424,7 @@
   <div class="wrap">
     <a class="brand" href="#top">
       <span class="mark">
-        <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="white" stroke-width="11"/><circle cx="50" cy="50" r="9" fill="white"/></svg>
+        <img src="/icons/favicon-32.png" alt="">
       </span>
       HirePotential
     </a>
@@ -579,7 +584,7 @@
   <div class="wrap">
     <a class="brand" href="#top">
       <span class="mark" style="width:22px;height:22px;border-radius:6px;">
-        <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="white" stroke-width="11"/><circle cx="50" cy="50" r="9" fill="white"/></svg>
+        <img src="/icons/favicon-32.png" alt="">
       </span>
       HirePotential
     </a>
