@@ -24,6 +24,7 @@
     --card: #FFFFFF;
     --border: rgba(23,22,31,0.08);
     --shadow: 0 1px 2px rgba(23,22,31,0.04), 0 8px 24px rgba(23,22,31,0.06);
+    --shadow-lg: 0 4px 8px rgba(23,22,31,0.05), 0 24px 48px rgba(23,22,31,0.10);
     --radius-lg: 26px;
     --radius-md: 18px;
     --radius-sm: 12px;
@@ -51,6 +52,7 @@
     --card: #17151F;
     --border: rgba(241,240,247,0.09);
     --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px rgba(0,0,0,0.35);
+    --shadow-lg: 0 4px 8px rgba(0,0,0,0.35), 0 30px 60px rgba(0,0,0,0.45);
     --invert-bg: #24222E;
   }
 
@@ -67,6 +69,7 @@
       --card: #17151F;
       --border: rgba(241,240,247,0.09);
       --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px rgba(0,0,0,0.35);
+      --shadow-lg: 0 4px 8px rgba(0,0,0,0.35), 0 30px 60px rgba(0,0,0,0.45);
       --invert-bg: #24222E;
     }
   }
@@ -149,7 +152,7 @@
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.05fr 0.95fr;
     gap: 56px;
     align-items: center;
   }
@@ -204,80 +207,22 @@
     color: var(--ink-secondary);
   }
 
-  /* ---------- Phone mockup ---------- */
-  .phone {
-    position: relative;
+  /* ---------- Real screenshots, framed ---------- */
+  .device-frame {
+    border-radius: 9.2%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card);
+    line-height: 0;
+  }
+  .device-frame img { width: 100%; display: block; }
+
+  .hero-shot {
     justify-self: center;
     width: 272px;
-    height: 560px;
-    border-radius: 46px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    padding: 14px 12px;
-    transform: rotate(2deg);
+    transform: rotate(1.6deg);
   }
-  .phone::before {
-    content: "";
-    position: absolute;
-    top: 22px; left: 50%;
-    transform: translateX(-50%);
-    width: 84px; height: 20px;
-    background: var(--ink);
-    border-radius: 999px;
-    opacity: 0.9;
-  }
-  .phone-screen {
-    height: 100%;
-    border-radius: 34px;
-    background: var(--paper);
-    padding: 46px 14px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    overflow: hidden;
-  }
-  .phone-title { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; margin: 0 2px 6px; }
-  .phone-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--card);
-    border-radius: 14px;
-    padding: 11px 12px;
-    box-shadow: var(--shadow);
-  }
-  .phone-row .num {
-    width: 18px;
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    color: color-mix(in srgb, var(--indigo) 60%, transparent);
-    flex-shrink: 0;
-  }
-  .phone-row .txt { display: flex; flex-direction: column; gap: 1px; }
-  .phone-row .t1 { font-size: 12.5px; font-weight: 600; }
-  .phone-row .t2 { font-size: 10px; color: var(--ink-secondary); }
-  .phone-card {
-    margin-top: 4px;
-    background: var(--card);
-    border-radius: 14px;
-    padding: 12px;
-    box-shadow: var(--shadow);
-  }
-  .phone-card .role-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-secondary); }
-  .phone-card .role-title { font-size: 13.5px; font-weight: 700; margin-top: 2px; }
-  .phone-card .ring {
-    width: 34px; height: 34px;
-    border-radius: 999px;
-    border: 3px solid var(--mint);
-    display: grid; place-items: center;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 700;
-    float: right;
-    margin-top: -30px;
-  }
+  .hero-shot .device-frame { box-shadow: var(--shadow-lg); }
 
   /* ---------- Section shared ---------- */
   section { padding: 64px 0; }
@@ -297,34 +242,37 @@
     margin: 0;
   }
 
-  /* ---------- Feature cards ---------- */
-  .features {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+  /* ---------- Showcase (real screens + copy, alternating) ---------- */
+  .showcase { display: flex; flex-direction: column; gap: 72px; }
+  .showcase-row {
+    display: flex;
+    align-items: center;
+    gap: 56px;
   }
-  .feature-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 22px 20px;
-    box-shadow: var(--shadow);
-  }
-  .feature-card .icon {
-    width: 40px; height: 40px;
-    border-radius: 12px;
-    display: grid; place-items: center;
-    margin-bottom: 16px;
-  }
-  .feature-card .icon svg { width: 20px; height: 20px; }
-  .feature-card .num {
+  .showcase-row.reverse { flex-direction: row-reverse; }
+  .showcase-shot { flex: 0 0 auto; width: 252px; }
+  .showcase-shot .device-frame { box-shadow: var(--shadow); }
+  .showcase-copy { flex: 1 1 auto; max-width: 480px; }
+  .showcase-copy .num {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--ink-secondary);
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
-  .feature-card h3 { font-size: 16px; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.01em; }
-  .feature-card p { font-size: 13.5px; line-height: 1.55; color: var(--ink-secondary); margin: 0; }
+  .showcase-copy h3 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+  }
+  .showcase-copy p {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+    margin: 0;
+  }
+  .showcase-copy p + p { margin-top: 10px; }
+  .showcase-copy strong { color: var(--ink); font-weight: 600; }
 
   /* ---------- How it works ---------- */
   .steps {
@@ -406,15 +354,16 @@
 
   @media (max-width: 880px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .phone { justify-self: start; transform: none; margin-top: 24px; }
-    .features { grid-template-columns: repeat(2, 1fr); }
+    .hero-shot { justify-self: start; transform: none; margin-top: 24px; width: 240px; }
+    .showcase-row, .showcase-row.reverse { flex-direction: column; align-items: flex-start; gap: 28px; }
+    .showcase-shot { width: 220px; }
     .steps { grid-template-columns: 1fr; gap: 32px; }
     .privacy-band { grid-template-columns: 1fr; padding: 32px 24px; }
     nav.top .links { display: none; }
   }
   @media (max-width: 520px) {
-    .features { grid-template-columns: 1fr; }
     .wrap { padding: 0 20px; }
+    .showcase-shot { width: 78vw; max-width: 280px; }
   }
 </style>
 </head>
@@ -429,7 +378,7 @@
       HirePotential
     </a>
     <div class="links">
-      <a href="#features">Features</a>
+      <a href="#features">See it in action</a>
       <a href="#how">How it works</a>
       <a href="#privacy">Privacy</a>
       <a class="nav-cta" href="#get">GET THE APP</a>
@@ -450,30 +399,9 @@
       </div>
     </div>
 
-    <div class="phone" aria-hidden="true">
-      <div class="phone-screen">
-        <div class="phone-title">Home</div>
-        <div class="phone-row">
-          <div class="num">1</div>
-          <div class="txt"><div class="t1">Basics</div><div class="t2">Get interview-ready</div></div>
-        </div>
-        <div class="phone-row">
-          <div class="num">2</div>
-          <div class="txt"><div class="t1">CV Review</div><div class="t2">Score it against a role</div></div>
-        </div>
-        <div class="phone-row">
-          <div class="num">3</div>
-          <div class="txt"><div class="t1">Research a Role</div><div class="t2">See what they're screening for</div></div>
-        </div>
-        <div class="phone-row">
-          <div class="num">4</div>
-          <div class="txt"><div class="t1">Interview Advice</div><div class="t2">STAR, tips, worked examples</div></div>
-        </div>
-        <div class="phone-card">
-          <div class="role-label">Your Role</div>
-          <div class="role-title">Senior Product<br>Designer</div>
-          <div class="ring">78</div>
-        </div>
+    <div class="hero-shot">
+      <div class="device-frame">
+        <img src="screenshots/home.png" alt="HirePotential's Home screen, showing The Basics, CV Tips, Interview Advice, and Analyse a Job Advert, plus a researched role scored 78.">
       </div>
     </div>
   </div>
@@ -482,46 +410,62 @@
 <section id="features">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Four tools, one flow</span>
-      <h2>Everything between the job post and the interview.</h2>
-      <p>Each piece works standalone, but they're built to feed each other — research a role once and it sharpens the CV score, the LinkedIn score, and the questions you rehearse.</p>
+      <span class="eyebrow">See it in action</span>
+      <h2>Real screens, real output — not a mockup.</h2>
+      <p>Every screenshot below is the actual app, with example content standing in for yours.</p>
     </div>
 
-    <div class="features">
-      <div class="feature-card">
-        <div class="icon" style="background:var(--indigo-soft)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+    <div class="showcase">
+      <div class="showcase-row">
+        <div class="showcase-shot">
+          <div class="device-frame">
+            <img src="screenshots/analyse-role.png" alt="Analyse a Job Advert screen showing five tailored STAR competency questions for a Senior Product Designer role.">
+          </div>
         </div>
-        <div class="num">01</div>
-        <h3>Research a Role</h3>
-        <p>Paste, upload, or link a job description. Get the interview themes hiding in the wording and a set of tailored competency questions.</p>
+        <div class="showcase-copy">
+          <div class="num">01 — Analyse a Job Advert</div>
+          <h3>See what they're actually screening for</h3>
+          <p>Paste, upload, or link a job advert and get the competency questions built specifically for it — not a generic bank. Five free to preview; rehearse the full tailored set once you're ready.</p>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="icon" style="background:color-mix(in srgb, var(--orange) 16%, transparent)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5M6 3h8l6 6v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 13h6M9 17h4"/></svg>
+      <div class="showcase-row reverse">
+        <div class="showcase-shot">
+          <div class="device-frame">
+            <img src="screenshots/cv-review.png" alt="CV Review screen showing a match score of 82, matched and missing keywords, and grouped suggestions.">
+          </div>
         </div>
-        <div class="num">02</div>
-        <h3>CV Review</h3>
-        <p>Scored on impact, wording, and formatting — matched against your role's keywords once one's active. No CV yet? A free guided checklist and builder link get you started.</p>
+        <div class="showcase-copy">
+          <div class="num">02 — CV Review</div>
+          <h3>A score, not just a "looks good"</h3>
+          <p>Matched and missing keywords, plus specific fixes — <strong>quantify the redesign</strong>, <strong>trim the over-long role</strong> — checked against a job advert once you've analysed one.</p>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="icon" style="background:color-mix(in srgb, var(--orange) 16%, transparent)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg>
+      <div class="showcase-row">
+        <div class="showcase-shot">
+          <div class="device-frame">
+            <img src="screenshots/linkedin-review.png" alt="LinkedIn Review screen showing a score of 76 with suggestions grouped under Headline, About, and Consistency.">
+          </div>
         </div>
-        <div class="num">03</div>
-        <h3>LinkedIn Review</h3>
-        <p>Structure, content, and — if you've added a CV — consistency between the two. PDF export, screenshots, or paste, whichever's easiest.</p>
+        <div class="showcase-copy">
+          <div class="num">03 — LinkedIn Review</div>
+          <h3>Checked against what a profile actually needs</h3>
+          <p>Headline, About section, and consistency with your CV — the structural things a recruiter notices in the first five seconds, not generic "add more keywords" advice.</p>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="icon" style="background:var(--indigo-soft)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M9 22h6"/></svg>
+      <div class="showcase-row reverse">
+        <div class="showcase-shot">
+          <div class="device-frame">
+            <img src="screenshots/feedback.png" alt="Rehearse Aloud feedback screen showing a score of 88 with specific good and tip items.">
+          </div>
         </div>
-        <div class="num">04</div>
-        <h3>Rehearse Aloud</h3>
-        <p>Answer real competency questions out loud, transcribed on-device, scored on content and structure — with specific, actionable feedback.</p>
+        <div class="showcase-copy">
+          <div class="num">04 — Rehearse Aloud</div>
+          <h3>Practice out loud, get real feedback</h3>
+          <p>Answer a real competency question, transcribed on-device and scored on structure and content — so the first time you say it out loud isn't in the actual interview.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -535,8 +479,8 @@
     </div>
     <div class="steps">
       <div class="step">
-        <div class="step-num">01 / RESEARCH</div>
-        <h3>Drop in a job description</h3>
+        <div class="step-num">01 / ANALYSE</div>
+        <h3>Drop in a job advert</h3>
         <p>Paste it, link it, or upload the file. HirePotential reads it once and keeps it active across every other tool in the app.</p>
       </div>
       <div class="step">
