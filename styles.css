@@ -170,10 +170,10 @@
     color: var(--indigo);
   }
   .hero p.lede {
-    font-size: 17.5px;
+    font-size: 16.5px;
     line-height: 1.6;
     color: var(--ink-secondary);
-    max-width: 46ch;
+    max-width: 60ch;
     margin: 0 0 32px;
   }
   .hero-ctas { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
