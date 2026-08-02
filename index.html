@@ -19,6 +19,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#37414F">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self'; form-action 'self' https://api.hirepotential.co.uk; object-src 'none'; base-uri 'self'">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -184,7 +185,7 @@
 <section id="privacy">
   <div class="wrap">
     <div class="privacy-band">
-      <div class="section-head" style="margin:0;">
+      <div class="section-head no-margin">
         <span class="eyebrow">Built to hold onto less, not more</span>
         <h2>We don't keep your data on our servers.</h2>
         <p>No account, no ad tracking — what you share is used to generate your results, then forgotten. We don't run a database of it.</p>
@@ -211,7 +212,7 @@
 <footer>
   <div class="wrap">
     <a class="brand" href="#top">
-      <span class="mark" style="width:22px;height:22px;border-radius:6px;">
+      <span class="mark mark-sm">
         <img src="/icons/favicon-32.png" alt="">
       </span>
       HirePotential

@@ -463,3 +463,7 @@
 .form-banner.success { background: color-mix(in srgb, var(--mint) 16%, transparent); color: var(--ink); display: none; }
 .form-banner.error { background: color-mix(in srgb, var(--red) 14%, transparent); color: var(--ink); display: none; }
 .form-banner.show { display: block; }
+
+/* ---------- Small utility classes (avoid inline style attributes, keeps CSP script/style-src clean) ---------- */
+.mark-sm { width: 22px; height: 22px; border-radius: 6px; }
+.no-margin { margin: 0; }
