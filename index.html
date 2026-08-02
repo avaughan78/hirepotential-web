@@ -305,6 +305,39 @@
   .extra h3 { font-size: 16px; font-weight: 700; margin: 0 0 6px; }
   .extra p { font-size: 13.5px; color: var(--ink-secondary); line-height: 1.55; margin: 0; }
 
+  /* ---------- Author note ---------- */
+  .author-card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    box-shadow: var(--shadow);
+  }
+  .author-card .eyebrow { margin-bottom: 18px; }
+  .author-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-secondary);
+    margin: 0 0 16px;
+    max-width: 62ch;
+  }
+  .author-card p:first-of-type {
+    font-size: 18.5px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .author-card p:last-of-type { margin-bottom: 0; }
+  .author-sign {
+    margin-top: 24px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
   /* ---------- How it works ---------- */
   .steps {
     display: grid;
@@ -396,6 +429,7 @@
   @media (max-width: 520px) {
     .wrap { padding: 0 20px; }
     .showcase-shot { width: 78vw; max-width: 280px; }
+    .author-card { padding: 28px 22px; }
   }
 </style>
 </head>
@@ -412,6 +446,7 @@
     <div class="nav-right">
       <div class="links">
         <a href="#features">See it in action</a>
+        <a href="#author">Why I built this</a>
         <a href="#how">How it works</a>
         <a href="#privacy">Privacy</a>
       </div>
@@ -515,6 +550,19 @@
         <h3>Interview Advice</h3>
         <p>Structure, technique, and how panels actually decide — the fundamentals behind every rehearsal.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="author">
+  <div class="wrap">
+    <div class="author-card">
+      <span class="eyebrow">Why I built this</span>
+      <p>I've had the privilege of working for a number of different companies, from start-ups to enterprise, and have been in the fortunate position of having to grow teams — sometimes slower, more organic growth, and sometimes quicker scaling up. Over the span of my career, the number of people I've screened and/or interviewed must be fast approaching 1,000.</p>
+      <p>Lots of people turn up well prepared. They have researched the company, communicate in a structured and clear way, and can talk about their experience — however limited or extensive — with ease.</p>
+      <p>However, there is an unnecessarily high percentage of candidates who turn up without having done their research, for whatever reason. I built this app to help anyone venturing into the job market, whether new or experienced. It's mostly free, and comprises tips, guidance and advice that I know will help job seekers turn up fully prepared for an interview.</p>
+      <p>I hope you find the information useful, and that there are a few tips in there you didn't already know.</p>
+      <div class="author-sign">— Andy, HirePotential</div>
     </div>
   </div>
 </section>
