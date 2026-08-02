@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HirePotential — Support</title>
+<meta name="description" content="Questions, bug reports, or feedback for HirePotential — send a message and hear back directly from the developer.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#37414F">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="mark">
+        <img src="/icons/favicon-32.png" alt="">
+      </span>
+      HirePotential
+    </a>
+    <div class="nav-right">
+      <div class="links">
+        <a href="/#features">See it in action</a>
+        <a href="/#author">Why I built this</a>
+        <a href="/#how">How it works</a>
+        <a href="/support/">Support</a>
+      </div>
+      <a class="nav-cta" href="/#get">GET THE APP</a>
+    </div>
+  </div>
+</nav>
+
+<section class="legal-page">
+  <div class="wrap">
+    <h1>HirePotential Support</h1>
+    <p class="meta">Interview prep, done properly.</p>
+
+    <div id="sent-banner" class="form-banner success">Message sent — thanks, I'll get back to you directly.</div>
+    <div id="error-banner" class="form-banner error">Couldn't send that message. Please try again in a moment.</div>
+
+    <p>Questions, bug reports, or feedback — send a message below and you'll hear back directly from the developer.</p>
+
+    <form class="contact-form" method="POST" action="https://api.hirepotential.co.uk/api/submitwebfeedback">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <label for="email">Your email (optional, so I can reply)</label>
+      <input id="email" name="email" type="email" autocomplete="email">
+      <div class="honeypot" aria-hidden="true">
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit">Send message</button>
+    </form>
+
+    <h2>Common questions</h2>
+    <ul>
+      <li><strong>How does the paid unlock work?</strong> A one-time purchase (currently £8.99) unlocks unlimited Rehearse Aloud sessions, CV Review, and LinkedIn Review — no subscription. It's a standard Apple in-app purchase, so it's tied to your Apple ID and restorable on any device via "Restore Purchases" in Settings.</li>
+      <li><strong>Something not working?</strong> Include your iOS version and, if possible, what you were doing when it happened — that's usually enough to track down.</li>
+      <li><strong>Requesting a refund?</strong> Refunds for the in-app purchase are handled by Apple, not by us directly — see <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="mark" style="width:22px;height:22px;border-radius:6px;">
+        <img src="/icons/favicon-32.png" alt="">
+      </span>
+      HirePotential
+    </a>
+    <div class="foot-links">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/support/">Support</a>
+      <a href="https://cv.hirepotential.co.uk">Free CV builder</a>
+    </div>
+    <div class="copyright">© 2026 HirePotential</div>
+  </div>
+</footer>
+
+<script>
+  var params = new URLSearchParams(location.search);
+  if (params.get('sent') === '1') {
+    document.getElementById('sent-banner').classList.add('show');
+  } else if (params.get('error') === '1') {
+    document.getElementById('error-banner').classList.add('show');
+  }
+</script>
+
+</body>
+</html>
