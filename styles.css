@@ -467,3 +467,41 @@
 /* ---------- Small utility classes (avoid inline style attributes, keeps CSP script/style-src clean) ---------- */
 .mark-sm { width: 22px; height: 22px; border-radius: 6px; }
 .no-margin { margin: 0; }
+
+/* ---------- Comparison table ---------- */
+.compare-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.compare-scroll { overflow-x: auto; }
+.compare-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+.compare-table th, .compare-table td {
+  padding: 16px 22px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.compare-table thead th {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-secondary);
+  padding-top: 20px;
+  padding-bottom: 14px;
+}
+.compare-table thead th.us { color: var(--indigo); }
+.compare-table td.feature { font-weight: 600; color: var(--ink); width: 20%; white-space: nowrap; }
+.compare-table td.us { background: var(--indigo-soft); color: var(--ink); }
+.compare-table td.them { color: var(--ink-secondary); }
+.compare-table tbody tr:last-child td { border-bottom: none; }
+.compare-note { font-size: 12.5px; color: var(--ink-secondary); margin-top: 16px; }
+@media (max-width: 520px) {
+  .compare-table th, .compare-table td { padding: 14px 16px; }
+}
